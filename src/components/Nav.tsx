@@ -15,14 +15,21 @@ const Nav = () => {
   const {data: session} = useSession()
 
 
-  useEffect(() => {
-    const fetchProviders = async () => {
-      const response = await getProviders()
-      setProviders(response)
-    }
 
-    fetchProviders()
-  }, [])
+  useEffect(() => {
+    (async () => {
+      const res = await getProviders();
+      setProviders(res);
+    })();
+  }, []);
+  // useEffect(() => {
+  //   const fetchProviders = async () => {
+  //     const response = await getProviders()
+  //     setProviders(response)
+  //   }
+
+  //   fetchProviders()
+  // }, [])
 
   return (
     <div className="flex-between w-full mb-16 pt-3">
