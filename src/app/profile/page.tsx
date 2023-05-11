@@ -11,6 +11,8 @@ const ProfilePage = () => {
   const { data: session } = useSession()
   const [posts, setPosts] = useState([])
 
+  const router = useRouter()
+
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -23,7 +25,9 @@ const ProfilePage = () => {
     if(session?.user?.id) fetchPosts()
   }, [])
 
-  const handleEdit = () => { }
+  const handleEdit = (post: { _id: number | string; }) => {
+    router.push(`/update-prompt?id=${post._id}`)
+   }
   const handleDelete = async () => { }
 
 

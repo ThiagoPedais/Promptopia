@@ -6,7 +6,7 @@ interface Props {
   name: string,
   desc: string,
   data: string[],
-  handleEdit: () => void,
+  handleEdit: Function,
   handleDelete: () => void
 }
 
