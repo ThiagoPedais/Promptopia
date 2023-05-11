@@ -7,7 +7,7 @@ interface Props {
   desc: string,
   data: string[],
   handleEdit: Function,
-  handleDelete: () => void
+  handleDelete: Function
 }
 
 const Profile = ({
